@@ -1,0 +1,317 @@
+import sys 
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
+from PyQt5.QtWidgets import QLCDNumber, QLabel, QLineEdit
+from PyQt5 import uic
+import random 
+class MyWidget(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("ButtonofFortune.ui", self)
+        
+        self.count = 500
+        self.lcdBalance.display(self.count)
+        self.attemptkol = 0
+        self.lcdAttempt.display(self.attemptkol)
+        self.winningkol = 0
+        self.lcdWinning.display(self.winningkol)
+        
+        self.ButtonPlay.clicked.connect(self.play)
+    
+    def play(self):
+        self.count -= 10
+        self.lcdBalance.display(self.count)
+        self.attemptkol += 1
+        self.lcdAttempt.display(self.attemptkol)
+        
+        self.l1 = random.randint(0, 1)
+        self.l2 = random.randint(0, 1)
+        self.l3 = random.randint(0, 1)
+        self.l4 = random.randint(0, 1)
+        self.l5 = random.randint(0, 1)
+        self.l6 = random.randint(0, 1)
+        self.l7 = random.randint(0, 1)
+        self.l8 = random.randint(0, 1)
+        self.l9 = random.randint(0, 1)
+        self.l10 = random.randint(0, 1)        
+        
+        if self.l1 == 0:
+            self.r1 = 1
+        else:
+            self.r1 = 0
+        
+        self.Button1L.clicked.connect(self.plusl1)
+        self.Button1R.clicked.connect(self.plusr1)
+        self.Button2L.clicked.connect(self.plusl2)
+        self.Button2R.clicked.connect(self.plusr2)
+        self.Button3L.clicked.connect(self.plusl3)
+        self.Button3R.clicked.connect(self.plusr3)
+        self.Button4L.clicked.connect(self.plusl4)
+        self.Button4R.clicked.connect(self.plusr4)
+        self.Button5L.clicked.connect(self.plusl5)
+        self.Button5R.clicked.connect(self.plusr5)
+        self.Button6L.clicked.connect(self.plusl6)
+        self.Button6R.clicked.connect(self.plusr6)
+        self.Button7L.clicked.connect(self.plusl7)
+        self.Button7R.clicked.connect(self.plusr7)
+        self.Button8L.clicked.connect(self.plusl8)
+        self.Button8R.clicked.connect(self.plusr8)
+        self.Button9L.clicked.connect(self.plusl9)
+        self.Button9R.clicked.connect(self.plusr9)
+        self.Button10L.clicked.connect(self.plusl10)
+        self.Button10R.clicked.connect(self.plusr10)
+        
+        self.ButtonStop.clicked.connect(self.stop)
+            
+    def plusl1(self):
+        self.l1 += 1
+        if self.l1 == 2:
+            self.label1.setText("yes")
+            self.winningkol += 10
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label1.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+     
+    def plusr1(self):
+        self.r1 += 1
+        if self.r1 == 2:
+            self.label1.setText("yes")
+            self.winningkol += 10
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label1.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl2(self):
+        self.l2 += 1
+        if self.l2 == 2:
+            self.label2.setText("yes")
+            self.winningkol += 20
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label2.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr2(self):
+        self.r2 += 1
+        if self.r2 == 2:
+            self.label2.setText("yes")
+            self.winningkol += 20
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label2.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl3(self):
+        self.l3 += 1
+        if self.l3 == 2:
+            self.label3.setText("yes")
+            self.winningkol += 30
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label3.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr3(self):
+        self.r3 += 1
+        if self.r3 == 2:
+            self.label3.setText("yes")
+            self.winningkol += 30
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label3.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl4(self):
+        self.l4 += 1
+        if self.l4 == 2:
+            self.label4.setText("yes")
+            self.winningkol += 40
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label4.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr4(self):
+        self.r4 += 1
+        if self.r4 == 2:
+            self.label4.setText("yes")
+            self.winningkol += 40
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label4.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl5(self):
+        self.l5 += 1
+        if self.l5 == 2:
+            self.label5.setText("yes")
+            self.winningkol += 50
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label5.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr5(self):
+        self.r5 += 1
+        if self.r5 == 2:
+            self.label5.setText("yes")
+            self.winningkol += 50
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label5.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+
+    def plusl6(self):
+        self.l6 += 1
+        if self.l6 == 2:
+            self.label6.setText("yes")
+            self.winningkol += 60
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label6.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr6(self):
+        self.r6 += 1
+        if self.r6 == 2:
+            self.label6.setText("yes")
+            self.winningkol += 60
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label6.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl7(self):
+        self.l7 += 1
+        if self.l7 == 2:
+            self.label7.setText("yes")
+            self.winningkol += 70
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label7.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr7(self):
+        self.r7 += 1
+        if self.r7 == 2:
+            self.label7.setText("yes")
+            self.winningkol += 70
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label7.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl8(self):
+        self.l8 += 1
+        if self.l8 == 2:
+            self.label8.setText("yes")
+            self.winningkol += 80
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label8.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr8(self):
+        self.r8 += 1
+        if self.r8 == 2:
+            self.label8.setText("yes")
+            self.winningkol += 80
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label8.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl9(self):
+        self.l9 += 1
+        if self.l9 == 2:
+            self.label9.setText("yes")
+            self.winningkol += 90
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label9.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr9(self):
+        self.r9 += 1
+        if self.r9 == 2:
+            self.label9.setText("yes")
+            self.winningkol += 90
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label9.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusl10(self):
+        self.l10 += 1
+        if self.l10 == 2:
+            self.label10.setText("yes")
+            self.winningkol += 100
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label10.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def plusr10(self):
+        self.r10 += 1
+        if self.r10 == 2:
+            self.label10.setText("yes")
+            self.winningkol += 100
+            self.lcdWinning.display(self.winningkol)
+        else:
+            self.label10.setText("no")
+            self.winningkol += 0
+            self.lcdWinning.display(self.winningkol)
+            #stop()
+    
+    def stop(self):
+        self.count += self.winningkol
+        self.lcdBalance.display(self.count)
+        for i in range(1, 10):
+            self.label[i].setText("")
+        
+        l1, l2, l3, l4, l5, l6, l7, l8, l9, l10 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        r1, r2, r3, r4, r5, r6, r7, r8, r9, r10 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+app = QApplication(sys.argv)
+ex = MyWidget()
+ex.show()
+sys.exit(app.exec_())
